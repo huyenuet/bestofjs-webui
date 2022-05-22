@@ -88,7 +88,9 @@
     <% } %>
     <!-- the end -->
     <% if (process.env.VERCEL_ENV === 'preview') { %>
-    <!-- No tracking in preview stage -->
+    <script>
+      console.log("preview");
+    </script>
     <% } %>
   </body>
 </html>
