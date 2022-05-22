@@ -59,7 +59,7 @@
     </style>
   </head>
 
-  <body>
+  <body class="<%= process.env.VERCEL_ENV %>">
     <div id="root"></div>
     <script type="module" src="/src/index.tsx"></script>
     <script>
@@ -85,7 +85,6 @@
       src="https://static.cloudflareinsights.com/beacon.min.js"
       data-cf-beacon='{"token": "17e6802f238e43c689b7b6ac5ab233c4"}'
     ></script>
-    <% } %> stage=<%= process.env.STAGE %> vercel_env1=<%=
-    process.env.VERCEL_ENV %> vercel_env2=<%= process.env.VITE_APP_VERCEL_ENV %>
+    <% } <%= process.env.VERCEL_ENV %>
   </body>
 </html>
