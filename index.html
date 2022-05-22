@@ -59,7 +59,7 @@
     </style>
   </head>
 
-  <body class="<%= process.env.VERCEL_ENV %>">
+  <body>
     <div id="root"></div>
     <script type="module" src="/src/index.tsx"></script>
     <script>
@@ -79,12 +79,14 @@
         "https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.6.0/hint.min.css"
       );
     </script>
-    <% if (process.env.VITE_APP_ENV === 'production') { %>
+    <% if (process.env.VERCEL_ENV === 'production') { %>
     <script
       defer
       src="https://static.cloudflareinsights.com/beacon.min.js"
       data-cf-beacon='{"token": "17e6802f238e43c689b7b6ac5ab233c4"}'
     ></script>
-    <% } <%= process.env.VERCEL_ENV %>
+    <% } %> <% if (process.env.VERCEL_ENV === 'preview') { %>
+    <!-- No tracking in preview stage -->
+    <% } %>
   </body>
 </html>
