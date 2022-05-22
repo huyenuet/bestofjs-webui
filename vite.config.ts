@@ -8,7 +8,7 @@ import { createHtmlPlugin } from "vite-plugin-html";
 export default defineConfig((props) => {
   // https://github.com/vitejs/vite/issues/1149#issuecomment-857686209
   const env = loadEnv(props.mode, process.cwd(), "VITE_APP");
-
+  env.VERCEL_ENV = process.env.VERCEL_ENV;
   const envWithProcessPrefix = {
     "process.env": `${JSON.stringify(env)}`,
   };
