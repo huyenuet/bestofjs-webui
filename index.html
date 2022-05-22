@@ -85,7 +85,9 @@
       src="https://static.cloudflareinsights.com/beacon.min.js"
       data-cf-beacon='{"token": "17e6802f238e43c689b7b6ac5ab233c4"}'
     ></script>
-    <% } %> <% if (process.env.VERCEL_ENV === 'preview') { %>
+    <% } %>
+    <!-- the end -->
+    <% if (process.env.VERCEL_ENV === 'preview') { %>
     <!-- No tracking in preview stage -->
     <% } %>
   </body>
